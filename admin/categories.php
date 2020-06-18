@@ -41,6 +41,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Category Title</th>
+                                        <th colspan="2">Setting</th>
                                     </tr>
                                 </thead>
                                 <tbody>

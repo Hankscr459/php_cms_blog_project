@@ -37,7 +37,7 @@
 
                                 default: 
 
-                                include "includes/view_all_posts.php";
+                                include "includes/view_all_comments.php";
 
                                 break;
                             }
