@@ -135,7 +135,7 @@
                 <!-- /.row -->
 
                 <?php
-                    $query = "SELECT * FROM posts WHERE post_status = 'draft'";
+                    $query = "SELECT * FROM posts WHERE post_status = 'draft' ";
                     $select_all_draft_posts = mysqli_query($connection, $query);
                     $post_draft_count = mysqli_num_rows($select_all_draft_posts);
 
@@ -143,15 +143,15 @@
                     $unapproved_comments_query = mysqli_query($connection, $query);
                     $unapproved_comment_count = mysqli_num_rows($unapproved_comments_query);
 
-                    $query = "SELECT * FROM users WHERE user_role = 'subscribers'";
+                    $query = "SELECT * FROM users WHERE user_role = 'subscriber' ";
                     $select_all_subscribers = mysqli_query($connection, $query);
-                    $subscribers_count = mysqli_num_rows($select_all_draft_posts);
+                    $subscribers_count = mysqli_num_rows($select_all_subscribers);
                 ?>
 
 
                 <div class="row">
                 
-                    <div class="container">
+                    <div class="col-md-12">
                     <!-- <div class="col-lg-9 col-md-8 col-sm-7"> -->
                         <script type="text/javascript">
                             google.charts.load('current', {'packages':['bar']});
@@ -182,10 +182,9 @@
 
                                     chart.draw(data, google.charts.Bar.convertOptions(options));
                                 }
-                                // $(window).resize(function(){
-                                //     drawChart();
-                                // });
+                                
                         </script>
+                        <script>window.onresize = function(){ location.reload(); }</script>
                         <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
                     </div>
 
