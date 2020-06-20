@@ -54,6 +54,11 @@
         $update_post = mysqli_query($connection, $query);
 
         confirmQuery($update_post);
+
+        echo "<p class='bg-info'>Post Updated. 
+                <a href='../post.php?p_id={$the_post_id}'> View Post </a>or
+                <a href='../posts.php'> Edit More Posts</a>
+            </p>";
     }
 ?>
 
@@ -86,8 +91,16 @@
         <input value="<?php echo $post_author; ?>" class="form-control" type="text" name="author">
     </div>
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input value="<?php echo $post_status; ?>" class="form-control" type="text" name="status">
+        <select name="status" id="">
+            <option value='<?php echo $post_status ?>'><?php echo $post_status ?></option>
+            <?php 
+                if($post_status == 'published' ) {
+                    echo "<option value='draft'>Draft</option>";
+                } else {
+                    echo "<option value='published'>Publish</option>";
+                }
+            ?>
+        </select>
     </div>
     <div class="form-group">
         <img width="100" src="../images/<?php echo $post_image; ?>" alt="">
@@ -100,7 +113,7 @@
     </div>
     <div class="form-group">
         <label for="post_content">Post Content</label>
-        <textarea class="form-control" name="post_content" id="" cols="30" rows="10">
+        <textarea id="body" class="form-control" name="post_content" id="" cols="30" rows="10">
             <?php echo $post_content; ?>
         </textarea>
     </div>
