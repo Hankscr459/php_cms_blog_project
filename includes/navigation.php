@@ -40,6 +40,9 @@
                     }
                 ?>
                 <li>
+                    <a href="registration.php">Registration</a>
+                </li>
+                <li>
                     <a href="#">Contact</a>
                 </li>
 
