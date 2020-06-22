@@ -45,17 +45,9 @@
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="css/loader.css">
  
-    <script>
-        $(document).ready(function(){
-    
-            ClassicEditor
-                .create(document.querySelector('#body'))
-                .catch(error => {
-                    console.log(error);
-                });
-        });
-    </script>
+    <script src="js/classiceditor.js"></script>
 
 </head>
 
